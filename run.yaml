@@ -1,0 +1,14 @@
+# Fill this in before you submit -- our evaluator runs these commands
+# EXACTLY as written, in this order, from a fresh checkout of your fork.
+# Keep every command non-interactive (no prompts) and idempotent.
+
+setup_commands:
+  - "python3 -c \"import sys; assert sys.version_info >= (3, 9)\""
+
+run_commands:
+  - "python3 src/main.py --help"
+
+test_commands:
+  - "python3 -m unittest discover -s src/tests -v"
+
+notes: "Python 3.9+, standard library only. Tests start a small local web server on 127.0.0.1, so they need no internet access. To check a real site, run: python3 src/main.py https://github.com (takes about 2 seconds, needs internet). The exit code is 0 when the site is healthy and 1 when it is not."
